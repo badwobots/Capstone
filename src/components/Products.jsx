@@ -9,7 +9,7 @@ const ProductsCard = ({ products, onAddProductCart, onreturnProduct, onDetails }
       <p>Description: {products.description}</p>
       <p>Price: {products.price}</p>
       <button className="cart-button" onClick={() => onAddProductCart(products.id)}>Add to Cart</button>
-      <button className="returnProduct-button" onClick={() => onreturnProduct(products.id)}>Return</button>
+      <button className="returnProduct-button" onClick={() => onreturnProduct(products.id)}>Remove</button>
       <button className="details-button" onClick={() => onDetails(products.id)}>See Details</button>
     </li>
   );

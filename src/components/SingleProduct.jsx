@@ -6,7 +6,7 @@ const fetchSingleProduct = async (productId, setSelectedProduct) => {
     try {
       const response = await fetch(APIURL + "/products/" + productId);
       if (!response.ok) {
-        throw new Error(`Failed to fetch book #${productId}`);
+        throw new Error(`Failed to fetch product #${productId}`);
       }
       const productData = await response.json();
       console.log(`Fetched product #${productId}:`, productData);
@@ -29,7 +29,7 @@ const fetchSingleProduct = async (productId, setSelectedProduct) => {
         {selectedProduct && (
             <>
             <h2>{selectedProduct.title}</h2>
-            <img src={selectedBook.image} alt={selectedProduct.title} width="125" height="125" />
+            <img src={selectedProduct.image} alt={selectedProduct.title} width="125" height="125" />
             <p>ID: {selectedProduct.id}</p>
             <p>Category: {selectedProduct.category}</p>
             <p>Description: {selectedProduct.description}</p>
