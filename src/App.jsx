@@ -10,7 +10,7 @@ import NewRegistrationForm from './components/Register.jsx';
 import ProductsCard from './components/Products.jsx';
 import UserDetails from './components/UserDetails.jsx';
 import Cart from './components/Cart.jsx';
-//import ProductDetails from './components/SingleProduct.jsx';
+import ProductDetails from './components/SingleProduct.jsx';
 
 //API link Information
 const APIURL = `https://fakestoreapi.com`;
@@ -190,6 +190,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/UserDetails" element={<UserDetails />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/SingleProduct" element={<ProductDetails />} />
         </Routes>
         </div>
       </Container>
@@ -198,7 +199,7 @@ function App() {
          <h2>{selectedProduct.title}</h2>
          <img src={selectedProduct.image} alt={selectedProduct.title} width="125" height="125" />
          <p>ID: {selectedProduct.id}</p>
-         <p>Author: {selectedProduct.category}</p>
+         <p>Category: {selectedProduct.category}</p>
          <p>Description: {selectedProduct.description}</p>
          <p>Price: {selectedProduct.price}</p>
         </div>
