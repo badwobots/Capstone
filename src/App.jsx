@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
    const results = products.filter(products =>
       products.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      products.category.toLowerCase().includes(searchTerm.toLowerCase())
+      products.category.toLowerCase().includes(searchTerm.toLowerCase()) 
    );
    setSearchResults(results);
   }, [searchTerm, products]);
@@ -159,7 +159,8 @@ function App() {
       <p>Serving all your product needs, from bejeweled phone cases to top tier electronics.</p>
 
       <p>You may purchase with or without an account but please register. How else are we going to track you? xD.</p>
-      <Navbar />
+    <div class="navbar"><Navbar />
+    </div>
     <div>
         <input
           type="text"
@@ -168,6 +169,17 @@ function App() {
           onChange={handleSearch}
         />
       </div> 
+    <div class="productdetail">
+    {selectedProduct && (
+         <div>
+         <h2>{selectedProduct.title}</h2>
+         <img src={selectedProduct.image} alt={selectedProduct.title} width="125" height="125" />
+         <p>ID: {selectedProduct.id}</p>
+         <p>Category: {selectedProduct.category}</p>
+         <p>Description: {selectedProduct.description}</p>
+         <p>Price: {selectedProduct.price}</p>
+        </div>
+            )}</div>  
     <Container>
       <div id="main-section">
         <Routes>
@@ -189,16 +201,6 @@ function App() {
         </Routes>
         </div>
       </Container>
-            {selectedProduct && (
-         <div>
-         <h2>{selectedProduct.title}</h2>
-         <img src={selectedProduct.image} alt={selectedProduct.title} width="125" height="125" />
-         <p>ID: {selectedProduct.id}</p>
-         <p>Category: {selectedProduct.category}</p>
-         <p>Description: {selectedProduct.description}</p>
-         <p>Price: {selectedProduct.price}</p>
-        </div>
-            )}
       </>
 
   )
