@@ -9,7 +9,7 @@ import Container from './components/Container.jsx';
 import NewRegistrationForm from './components/Register.jsx';
 import ProductsCard from './components/Products.jsx';
 import UserDetails from './components/UserDetails.jsx';
-import Cart from './components/Cart.jsx';
+import Cart from './components/apicart.jsx';
 import ProductDetails from './components/SingleProduct.jsx';
 
 //API link Information
@@ -21,6 +21,7 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
    const results = products.filter(products =>
@@ -158,10 +159,7 @@ function App() {
       <p>Serving all your product needs, from bejeweled phone cases to top tier electronics.</p>
 
       <p>You may purchase with or without an account but please register. How else are we going to track you? xD.</p>
-
-      <Login token={token} setToken={setToken} />
       <Navbar />
-      <NewRegistrationForm addNewUser={addNewUser}  />
     <div>
         <input
           type="text"
@@ -170,8 +168,12 @@ function App() {
           onChange={handleSearch}
         />
       </div> 
-      <ul>
-      {searchResults.map((products) => (
+    <Container>
+      <div id="main-section">
+        <Routes>
+          <Route path="/Login" element={<Login token={token} setToken={setToken} />} />
+          <Route path="/Register" element={<NewRegistrationForm addNewUser={addNewUser}  />} />
+          <Route path="/Products" element={searchResults.map((products) => (
         <ProductsCard
           key={products.id}
           products={products}
@@ -179,15 +181,8 @@ function App() {
           onreturnProduct={handlereturnProduct}
           onDetails={handleSeeProductDetails}
         />
-      ))}
-    </ul>
-    <Container>
-      <div id="main-section">
-        <Routes>
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<NewRegistrationForm />} />
-          <Route path="/Products" element={<ProductsCard />} />
-          <Route path="/" element={<Login />} />
+      ))} />
+          <Route path="/" element={<Login token={token} setToken={setToken} />} />
           <Route path="/UserDetails" element={<UserDetails />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/SingleProduct" element={<ProductDetails />} />

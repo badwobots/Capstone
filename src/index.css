@@ -1,82 +1,73 @@
-body {
-  font-family: Georgia, serif;
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
+.form {
+  align-content: center;
+  margin-top: 90px;
 }
-
-#logo-image {
-  width: 30px;
-  margin-right: 10px;
-}
-
-* {
-  font-family: arial, sans-serif;
-  margin: 0;
-}
-
-body,
-body > div {
-  height: 100vh;
-  width: 100vw;
-}
-
-#container {
-  height: 100%;
+form {
+  border: black solid 5px;
+  border-radius: 5px;
+  background-color: aqua;
+  background-size: 50%;
+  padding: 20px;
+  width: 50%;
+  height: 80%;
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
+
 }
 
-#container > div {
-  display: flex;
+label[for="name"],label[for="breed"],label[for="status"],label[for="image"],label[for="teamId"] {
+  text-align: center;
+  background-color: rgba(255,255,255,0.5);
+  padding: 20px 20px 0 20px;
+}
+input, textarea {
+  width: 60%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+textarea {
+  width: 95%;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+::placeholder {
+  font-size: large;
+  padding-top: 5px;
+  text-align: center;
 }
 
-#navbar {
-  padding: 2em;
-  justify-content: space-evenly;
+select {
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
 }
 
-#main-section {
-  flex-grow: 1;
+input[type=text], input[type=submit] {
+  font-size: 20px;
+  text-align: center;
 }
-
-#main-section > div {
-  width: 100%;
-  display: flex;
+.view, .home {
+  display: inline-flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
+  margin-top: -20%;
 }
-
-.red {
-  background-color: #b05f6d;
-  color: white;
+.details {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2%;
 }
-
-.blue {
-  background-color: #275db3;
-  color: white;
-}
-
 .home {
-  background-color: #136c28;
-  color: white;
+  float: left;
 }
-
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.view {
+  float: right;
 }
-
-.container > div {
-  display: flex;
-}
-
-#perfooter {
-  padding: 2em;
-  justify-content: space-evenly;
-}
-
 p {
   font-size: 20px;
   background-color: rgba(255,255,255,0.7); 
@@ -97,7 +88,8 @@ ul {
   flex-flow: row wrap;
   list-style: none;
   padding: 0;
-}  
+}
+
 li {
   flex: 1 1 300px;
   max-height: 200px;
@@ -107,17 +99,45 @@ li {
   border-radius: 5px;
   overflow: auto;
 }
-article {
-  display: flex;
-  flex-flow: column;
-  list-style: none;
-  padding: 0;
-  flex: 1 1 300px;
-  max-height: 300px;
-  max-width: fit-content;
+
+p {
+  font-size: 20px;
+  background-color: rgba(255,255,255,0.7); 
+  padding: 15px 15px 0 15px;
+}
+
+h1 {
+  background-color: rgba(255,255,255,0.7); 
+  padding: 15px 15px 0 15px;
+  text-align: center;
+}
+
+h2 {
+  background-color: rgba(255,255,255,0.7); 
+  padding: 15px 15px 0 15px;
+  text-align: left;
+}
+
+li {
+  flex: 1 1 200px;
+  max-height: 200px;
   margin: 10px;
   padding: 10px;
   border: 5px solid black;
   border-radius: 5px;
   overflow: auto;
+}
+
+.main-section {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    padding: 0;
+    flex: 1 1 300px;
+    max-height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid black;
+    border-radius: 5px;
+    overflow: auto;
 }
