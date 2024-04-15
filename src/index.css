@@ -141,3 +141,18 @@ li {
     border-radius: 5px;
     overflow: auto;
 }
+
+#navbar {
+  padding: 2em;
+  justify-content: space-evenly;
+}
+
+.navbar {
+  background-color: aliceblue;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  min-height: 70px;
+}
